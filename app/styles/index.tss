@@ -1,17 +1,21 @@
-"TabGroup":{ 
+"mainTabGroup":{ 
        backgroundColor:"black", 
 }, 
 "View":{     
        layout:'vertical', 
 } 
 "#tab1":{ 
-       title:"Remote Read", 
-       icon:"KS_nav_ui.png", 
+       title:"Fresas", 
+       icon:"fresa.jpg", 
 }, 
 "#tab2":{ 
-       title:"Remote Insert", 
-       icon:"KS_nav_ui.png", 
+       title:"Piñas", 
+       icon:"pineapple.jpg", 
 }, 
+"#tab3":{
+       title:"Kiwi", 
+       icon:"kiwi.jpg", 
+},
 "#tableView":{ 
        headerTitle : 'To do list', 
 }, 
@@ -28,4 +32,32 @@
        left:"180dp", 
        width:"124dp", 
        height:"50dp", 
-},  
+},
+"#insertKiwi":{ 
+       color:"#336699", 
+       top:"10dp", 
+       left:"10dp", 
+       width:"290dp", 
+       height:"50dp", 
+},
+"#insertPina":{ 
+       color:"#336691", 
+       top:"10dp", 
+       left:"10dp", 
+       width:"290dp", 
+       height:"50dp", 
+}, 
+"#insertFresa":{ 
+       color:"#336692", 
+       top:"10dp", 
+       left:"10dp", 
+       width:"290dp", 
+       height:"50dp", 
+}, 
+"#solicitarPina":{ 
+       color:"#336692", 
+       top:"40dp", 
+       left:"40dp", 
+       width:"290dp", 
+       height:"50dp", 
+}, 

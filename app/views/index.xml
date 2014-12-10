@@ -1,18 +1,30 @@
 <Alloy>
-	<TabGroup id="mainTabGroup"> 
-		<!-- On click event execute getTodoList -->
-        <Tab id="tab1" onClick="getTodoList"> 
+    <TabGroup id="mainTabGroup"> 
+        <!-- On click event execute getTodoList -->
+        <Tab id="tab1" > 
             <Window id="readWin"> 
-                 <TableView id="tableView"/> 
+                 <TableView id="tableViewFresa"/>
+                 <Button id="solicitarFresa">Solicitar</Button>
+                 <TextField id="insertFresa"/> 
+                 <Button id="producirFresa">Mandar a producir</Button> 
             </Window> 
         </Tab> 
-        <Tab id="tab2"> 
-            <Window id="insertWin"> 
-                 <View id="mainView"> 
-                       <TextField id="inserTxtF"/> 
-                <Button id="insertBtn" onClick="insertData" /> 
-                 </View> 
+        <Tab id="tab2" > 
+            <Window id="readWin"> 
+                 <TableView id="tableViewPina"/>
+                 
             </Window> 
+            <Button id="solicitarPina">Solicitar</Button>
+                 <TextField id="insertPina"/> 
+                 <Button id="producirPina" onClick="producirPina">Mandar a producir</Button> 
         </Tab> 
+        <Tab id="tab3" > 
+            <Window id="readWin"> 
+                 <TableView id="tableViewKiwi"/>
+                 <Button id="solicitarKiwi" onClick="solicitarKiwi">Solicitar</Button>
+                 <TextField id="insertKiwi"/>
+                 <Button id="producirKiwi">Mandar a producir</Button>
+            </Window> 
+        </Tab>
     </TabGroup>
 </Alloy>
