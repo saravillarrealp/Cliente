@@ -1,0 +1,8 @@
+<Alloy>
+	<TableViewRow id="row">
+		<View>
+			<Button>prueba</Button>
+			
+		</View>
+	</TableViewRow>
+</Alloy>

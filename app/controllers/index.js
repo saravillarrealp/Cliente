@@ -39,7 +39,7 @@ function getTodoList(fruta) {
     });
     
     //Here you have to change it for your local ip
-    sendit.open('GET', 'http://localhost:3000/api/kiwitienda/obtenertodas/'+fruta);
+    sendit.open('GET', 'http://localhost:8000/api/kiwitienda/obtenertodas/'+fruta);
     sendit.send();
     
     //Function to be called upon a successful response
@@ -106,7 +106,7 @@ function getTodoList(fruta) {
                     console.log("El ID es "+e.source.miId);
                     //Here you have to change it for your local ip
                     var params = {"_id":e.source.miId};
-                    sendUpdate.open('PUT', 'http://localhost:3000/api/kiwitienda/venderfruta');
+                    sendUpdate.open('PUT', 'http://localhost:8000/api/kiwitienda/venderfruta');
                     sendUpdate.send(params);
                     
                     sendUpdate.onload = function(e){
@@ -126,7 +126,7 @@ function getTodoList(fruta) {
                     image:"despachar.png",
                     width:64,
                     height:64,
-                    right:104,
+                    right:110,
                     top:-5
                 }); 
                 
@@ -152,7 +152,7 @@ function getTodoList(fruta) {
                     console.log("El ID es "+e.source.miID);
                     //Here you have to change it for your local ip
                     var params = {"_id":e.source.miID};
-                    sendDelete.open('DELETE', 'http://localhost:3000/api/kiwitienda/despacharfruta');
+                    sendDelete.open('DELETE', 'http://localhost:8000/api/kiwitienda/despacharfruta');
                     sendDelete.send(params);
                     
                     sendDelete.onload = function(e){
@@ -196,7 +196,7 @@ function getTodoList(fruta) {
                     console.log("El ID es "+e.source.miId);
                     //Here you have to change it for your local ip
                     var params = {"_id":e.source.miId};
-                    sendUpdate.open('PUT', 'http://localhost:3000/api/kiwitienda/venderfruta');
+                    sendUpdate.open('PUT', 'http://localhost:8000/api/kiwitienda/venderfruta');
                     sendUpdate.send(params);
                     
                     sendUpdate.onload = function(e){
@@ -240,7 +240,7 @@ function getTodoList(fruta) {
                     console.log("El ID es "+e.source.miID);
                     //Here you have to change it for your local ip
                     var params = {"_id":e.source.miID};
-                    sendDelete.open('DELETE', 'http://localhost:3000/api/kiwitienda/despacharfruta');
+                    sendDelete.open('DELETE', 'http://localhost:8000/api/kiwitienda/despacharfruta');
                     sendDelete.send(params);
                     
                     sendDelete.onload = function(e){
@@ -284,7 +284,7 @@ function getTodoList(fruta) {
                     console.log("El ID es "+e.source.miId);
                     //Here you have to change it for your local ip
                     var params = {"_id":e.source.miId};
-                    sendUpdate.open('PUT', 'http://localhost:3000/api/kiwitienda/venderfruta');
+                    sendUpdate.open('PUT', 'http://localhost:8000/api/kiwitienda/venderfruta');
                     sendUpdate.send(params);
                     
                     sendUpdate.onload = function(e){
@@ -328,7 +328,7 @@ function getTodoList(fruta) {
                     console.log("El ID es "+e.source.miId);
                     //Here you have to change it for your local ip
                     var params = {"_id":e.source.miID};
-                    sendDelete.open('DELETE', 'http://localhost:3000/api/kiwitienda/despacharfruta');
+                    sendDelete.open('DELETE', 'http://localhost:8000/api/fresatienda/despacharfruta');
                     sendDelete.send(params);
                     
                     sendDelete.onload = function(e){
@@ -363,7 +363,27 @@ function solicitarKiwi() {
         timeout : 1000,
     });
     //Request the data from the web service, Here you have to change it for your local ip
-    request.open("POST", "http://localhost:3000/api/tienda/kiwi/solicitarfrutas");
+    request.open("POST", "http://localhost:8000/api/tienda/kiwi/solicitarfrutas");
+    //      var params = ({"id": $.inserTxtF.value});
+    //      console.log ('lo que tiene params ', params);
+    request.send();
+}
+
+function solicitarFresa() {
+	console.log('solicitando fresa');
+    var request = Ti.Network.createHTTPClient({
+        onload : function(e) {
+        //    alert(this.responseText);
+        getTodoList("fresa");
+        },
+        onerror : function(e) {
+            Ti.API.debug(e.error);
+            alert('There was an error during the conexion');
+        },
+        timeout : 1000,
+    });
+    //Request the data from the web service, Here you have to change it for your local ip
+    request.open("POST", "http://localhost:8000/api/tienda/fresa/solicitarfrutas");
     //      var params = ({"id": $.inserTxtF.value});
     //      console.log ('lo que tiene params ', params);
     request.send();
@@ -382,10 +402,29 @@ function producirPina() {
         timeout : 1000,
     });
     //Request the data from the web service, Here you have to change it for your local ip
-    request.open("POST", "http://localhost:3000/api/tienda/roicel");
+    request.open("POST", "http://localhost:8000/api/tienda/roicel");
     var params = ({"type": "pina", "quantity": $.insertPina.value});
     request.send(params);
 }
+
+function producirFresa() {
+    var request = Ti.Network.createHTTPClient({
+        onload : function(e) {
+        //    alert(this.responseText);
+        getTodoList("fresa");
+        },
+        onerror : function(e) {
+            Ti.API.debug(e.error);
+            alert('There was an error during the conexion');
+        },
+        timeout : 1000,
+    });
+    //Request the data from the web service, Here you have to change it for your local ip
+    request.open("POST", "http://localhost:8000/api/tienda/sara");
+    var params = ({"type": "fresa", "quantity": $.insertFresa.value});
+    request.send(params);
+}
+
 
 function insertData() {
     //if there is something in the textbox
@@ -401,7 +440,7 @@ function insertData() {
             timeout : 1000,
         });
         //Request the data from the web service, Here you have to change it for your local ip
-        request.open("POST", "http://localhost:3000/api/models/" + $.inserTxtF.value);
+        request.open("POST", "http://localhost:8000/api/models/" + $.inserTxtF.value);
         //      var params = ({"id": $.inserTxtF.value});
         //      console.log ('lo que tiene params ', params);
         request.send();

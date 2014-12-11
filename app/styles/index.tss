@@ -47,13 +47,7 @@
        width:"290dp", 
        height:"50dp", 
 }, 
-"#insertFresa":{ 
-       color:"#336692", 
-       top:"10dp", 
-       left:"10dp", 
-       width:"290dp", 
-       height:"50dp", 
-}, 
+
 "#solicitarPina":{ 
        color:"#336692", 
        top:"40dp", 
@@ -61,3 +55,37 @@
        width:"290dp", 
        height:"50dp", 
 }, 
+"#insertFresa":{ 
+       color:"#336692", 
+       bottom:"50dp", 
+       left:"10dp", 
+       width:"170px", 
+       height:"42px", 
+}, 
+"#producirFresa":{ 
+       color:"#336692", 
+       bottom:"50dp", 
+       left:"200dp", 
+       width:"187px", 
+       height:"42px", 
+       image :"Artboard-3.png" 
+},
+
+"#solicitarFresa":{ 
+       color:"#336692", 
+       bottom:"100dp", 
+       left:"10dp", 
+       width:"187px", 
+       height:"42px",
+       image :"Artboard-2.png" 
+}, 
+
+"#tableViewFresa":{ 
+       color:"#336692", 
+       top:"10dp", 
+       left: "true", 
+       width:"80%", 
+       height:"80%", 
+       image :"Artboard-3.png" 
+},
+
