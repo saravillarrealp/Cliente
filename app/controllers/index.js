@@ -369,6 +369,27 @@ function solicitarKiwi() {
     request.send();
 }
 
+function solicitarPina() {
+    console.log('solicitando piñas');
+    var request = Ti.Network.createHTTPClient({
+        onload : function(e) {
+        //    alert(this.responseText);
+        getTodoList("pina");
+        },
+        onerror : function(e) {
+            Ti.API.debug(e.error);
+            alert('There was an error during the conexion');
+        },
+        timeout : 1000,
+    });
+    //Request the data from the web service, Here you have to change it for your local ip
+    request.open("POST", "http://localhost:8000/api/tienda/pina/solicitarfrutas");
+    //      var params = ({"id": $.inserTxtF.value});
+    //      console.log ('lo que tiene params ', params);
+    request.send();
+}
+
+
 function solicitarFresa() {
 	console.log('solicitando fresa');
     var request = Ti.Network.createHTTPClient({

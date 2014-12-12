@@ -4,7 +4,7 @@
 		<Tab id="tab1"  >
 			<Window id="readWin" width="400px" height="400px" backgroundColor="#FFFFFF" >
 				<TableView id="tableViewFresa" />
-				<Button id="solicitarFresa" ></Button>
+				<Button id="solicitarFresa" onClick="solicitarFresa" ></Button>
 				<TextField id="insertFresa"/>
 				<Button id="producirFresa" onClick="producirFresa" ></Button>
 			</Window>
@@ -12,7 +12,7 @@
 		<Tab id="tab2" >
 			<Window id="readWin">
 				<TableView id="tableViewPina"/>
-				<Button id="solicitarPina">Solicitar</Button>
+				<Button id="solicitarPina" onClick="solicitarPina" >Solicitar</Button>
 				<TextField id="insertPina"/>
 				<Button id="producirPina" onClick="producirPina">Mandar a producir</Button>
 			</Window>
